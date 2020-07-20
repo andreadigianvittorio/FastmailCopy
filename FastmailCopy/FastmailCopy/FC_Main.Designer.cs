@@ -35,7 +35,7 @@
             this.txt_target = new System.Windows.Forms.TextBox();
             this.btn_browse = new System.Windows.Forms.Button();
             this.fbd_fmbrowsefile = new System.Windows.Forms.FolderBrowserDialog();
-            this.txt_startcopy = new System.Windows.Forms.Button();
+            this.btn_startcopy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -103,17 +103,17 @@
             this.btn_browse.UseVisualStyleBackColor = true;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
             // 
-            // txt_startcopy
+            // btn_startcopy
             // 
-            this.txt_startcopy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txt_startcopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txt_startcopy.Location = new System.Drawing.Point(413, 137);
-            this.txt_startcopy.Name = "txt_startcopy";
-            this.txt_startcopy.Size = new System.Drawing.Size(75, 23);
-            this.txt_startcopy.TabIndex = 6;
-            this.txt_startcopy.Text = "Avvia";
-            this.txt_startcopy.UseVisualStyleBackColor = true;
-            this.txt_startcopy.Click += new System.EventHandler(this.txt_startcopy_Click);
+            this.btn_startcopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_startcopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_startcopy.Location = new System.Drawing.Point(413, 137);
+            this.btn_startcopy.Name = "btn_startcopy";
+            this.btn_startcopy.Size = new System.Drawing.Size(75, 23);
+            this.btn_startcopy.TabIndex = 6;
+            this.btn_startcopy.Text = "Avvia";
+            this.btn_startcopy.UseVisualStyleBackColor = true;
+            this.btn_startcopy.Click += new System.EventHandler(this.btn_startcopy_Click);
             // 
             // FC_Main
             // 
@@ -121,7 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(495, 172);
-            this.Controls.Add(this.txt_startcopy);
+            this.Controls.Add(this.btn_startcopy);
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.txt_target);
             this.Controls.Add(this.label1);
@@ -149,7 +149,7 @@
         private System.Windows.Forms.TextBox txt_target;
         private System.Windows.Forms.Button btn_browse;
         private System.Windows.Forms.FolderBrowserDialog fbd_fmbrowsefile;
-        private System.Windows.Forms.Button txt_startcopy;
+        private System.Windows.Forms.Button btn_startcopy;
     }
 }
 

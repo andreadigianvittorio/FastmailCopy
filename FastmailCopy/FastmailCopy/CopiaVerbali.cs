@@ -4,14 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace FastmailCopy
 {
     class CopiaVerbali
     {
-        public void test(String target)
+        public void copy(String SPath, String TPath)
         {
-            MessageBox.Show(target);
+            DirectoryInfo dir = new DirectoryInfo(SPath);
+            FileInfo[] files = dir.GetFiles();
+            foreach(FileInfo file in files)
+            {
+                string TempPath = Path.Combine(TPath, file.Name);
+                file.CopyTo(TempPath,false);
+            }
+            
         }
     }
 }

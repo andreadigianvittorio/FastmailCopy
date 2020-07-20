@@ -28,10 +28,14 @@ namespace FastmailCopy
             txt_target.Text = fbd_fmbrowsefile.SelectedPath;
         }
 
-        private void txt_startcopy_Click(object sender, EventArgs e)
+        private void btn_startcopy_Click(object sender, EventArgs e)
         {
             CopiaVerbali copia_verbali = new CopiaVerbali();
-            copia_verbali.test(txt_target.Text);
+            CopiaRendicontazioni copia_rendicontazioni = new CopiaRendicontazioni();
+            CopiaPEC copia_pec = new CopiaPEC();
+            CopiaCAD copia_cad = new CopiaCAD();
+            copia_verbali.copy(@"C:\Users\andre\Downloads", txt_target.Text);
+            
 
         }
     }
