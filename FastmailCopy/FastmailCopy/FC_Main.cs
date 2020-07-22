@@ -30,12 +30,9 @@ namespace FastmailCopy
 
         private void btn_startcopy_Click(object sender, EventArgs e)
         {
-            CopiaVerbali copia_verbali = new CopiaVerbali();
-            CopiaRendicontazioni copia_rendicontazioni = new CopiaRendicontazioni();
-            CopiaPEC copia_pec = new CopiaPEC();
-            CopiaCAD copia_cad = new CopiaCAD();
-            copia_verbali.copy(@"C:\Users\andre\Downloads", txt_target.Text);
-            
+
+            FastmailTool tool = new FastmailTool();
+            tool.copiaVerbali("1", "2", "3");
 
         }
     }

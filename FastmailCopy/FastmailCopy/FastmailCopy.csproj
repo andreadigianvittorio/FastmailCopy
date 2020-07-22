@@ -46,11 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CopiaBuste.cs" />
-    <Compile Include="CopiaCAD.cs" />
-    <Compile Include="CopiaPEC.cs" />
-    <Compile Include="CopiaRendicontazioni.cs" />
-    <Compile Include="CopiaVerbali.cs" />
+    <Compile Include="FastmailTool.cs" />
     <Compile Include="FC_Main.cs">
       <SubType>Form</SubType>
     </Compile>
