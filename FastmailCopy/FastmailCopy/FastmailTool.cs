@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,22 +10,15 @@ namespace FastmailCopy
 {
     class FastmailTool
     {
-        private String verSource = @"\\nas2\Fastmail\verbali";
-        private String renSource = @"\\nas2\Fastmail\rendicontazioni";
-        private String busSource = @"\\nas2\Fastmail\buste";
-        private String cadSource = @"\\nas2\Fastmail\cad";
-        private String pecSource = @"\\nas2\Fastmail\pec";
+        enum FileType { verbali, images, buste, cad, pec}
 
-        public void copiaVerbali(String source, String target, String codCli)
+        public void copiaFiles(String source, int type, String target, String codCli)
         {
             int anno = 2013; /*  necessario calcolare di volta in volta l'anno in quanto i pdf sono divisi per annualità */
 
-           
-            while ( anno <= System.DateTime.Today.Year)
-            {
-                MessageBox.Show(anno.ToString());
-                anno++;
-            }
+            FileType fileType = (FileType)type;
+            source = Path.Combine(source, fileType.ToString(), codCli);
+            MessageBox.Show(source);
         }
     }
 }

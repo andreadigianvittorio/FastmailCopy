@@ -32,7 +32,12 @@ namespace FastmailCopy
         {
 
             FastmailTool tool = new FastmailTool();
-            tool.copiaVerbali("1", "2", "3");
+            tool.copiaFiles(@"\\nas2\Fastmail\",0,txt_target.Text,txt_fmcode.Text);
+            tool.copiaFiles(@"\\nas2\Fastmail\",1,txt_target.Text,txt_fmcode.Text);
+            tool.copiaFiles(@"\\nas2\Fastmail\",2,txt_target.Text,txt_fmcode.Text);
+            tool.copiaFiles(@"\\nas2\Fastmail\",3,txt_target.Text,txt_fmcode.Text);
+            tool.copiaFiles(@"\\nas2\Fastmail\",4,txt_target.Text, txt_fmcode.Text);
+
 
         }
     }
