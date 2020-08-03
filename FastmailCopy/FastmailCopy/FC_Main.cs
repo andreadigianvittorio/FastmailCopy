@@ -29,14 +29,14 @@ namespace FastmailCopy
         }
 
         private void btn_startcopy_Click(object sender, EventArgs e)
-        {
+        {   
+            FastmailTool copy = new FastmailTool();
 
-            FastmailTool tool = new FastmailTool();
-            tool.copiaFiles(@"\\nas2\Fastmail\",0,txt_target.Text,txt_fmcode.Text);
-            tool.copiaFiles(@"\\nas2\Fastmail\",1,txt_target.Text,txt_fmcode.Text);
-            tool.copiaFiles(@"\\nas2\Fastmail\",2,txt_target.Text,txt_fmcode.Text);
-            tool.copiaFiles(@"\\nas2\Fastmail\",3,txt_target.Text,txt_fmcode.Text);
-            tool.copiaFiles(@"\\nas2\Fastmail\",4,txt_target.Text, txt_fmcode.Text);
+            copy.copiaFiles(@"\\nas2\Fastmail\",0,txt_target.Text,txt_fmcode.Text);
+            copy.copiaFiles(@"\\nas2\Fastmail\",1,txt_target.Text,txt_fmcode.Text);
+            copy.copiaFiles(@"\\nas2\Fastmail\",2,txt_target.Text,txt_fmcode.Text);
+            copy.copiaFiles(@"\\nas2\Fastmail\",3,txt_target.Text,txt_fmcode.Text);
+            copy.copiaFiles(@"\\nas2\Fastmail\",4,txt_target.Text, txt_fmcode.Text);
 
 
         }
