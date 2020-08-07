@@ -9,17 +9,30 @@ namespace FastmailCopy
         enum FileType { verbali, images, buste, cad, pec}
 
         public void copiaFiles(String source, int type, String target, String codCli)
-        {
-            
-            
-
-
-
-            int anno = 2013; /*  necessario calcolare di volta in volta l'anno in quanto i pdf sono divisi per annualità */
-
+        { 
             FileType fileType = (FileType)type;
-            source = Path.Combine(source, fileType.ToString(), codCli);
-            MessageBox.Show(source);
+            String rTarget = Path.Combine(target, codCli,fileType.ToString());
+            DirectoryInfo dPath = new DirectoryInfo(rTarget);
+
+            DirectoryInfo Dirs = new DirectoryInfo(@"\\nas2\fastmail\verbali\2020");
+
+
+            DirectoryInfo[] dirs = Dirs.GetDirectories();
+
+            foreach ( DirectoryInfo subdir in dirs)
+            {
+                MessageBox.Show(subdir.ToString());
+            }
+            
+            
+
+            
+
+
+
+            
+
+            
         }
     }
 }
