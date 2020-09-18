@@ -30,14 +30,31 @@ namespace FastmailCopy
 
         private void btn_startcopy_Click(object sender, EventArgs e)
         {   
-            FastmailTool copy = new FastmailTool();
+            FastmailTool copy = new FastmailTool( );
+            int year = 2000;
+            /* Devo generare la source e la dest */
+            while ( year <= DateTime.Now.Year )
+            {
+                
+                string Vsource = @"\\nas2\Fastmail\verbali\" + year + @"\" + txt_fmcode.Text;
+                string Vdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Verbali" + @"\" + year;
+                copy.getFMFiles(Vsource, Vdest, false);
+                
+                string Rsource = @"\\nas2\Fastmail\images\" + year + @"\" + txt_fmcode.Text;
+                string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Rendicontazioni" + @"\" + year;
+                copy.getFMFiles(Rsource, Rdest, true);
+                /*
+                string Csource = @"\\nas2\Fastmail\Cad\" + year + @"\" + txt_fmcode.Text;
+                string Cdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Cad" + @"\" + year;
+                copy.getFMFiles(Csource, Cdest, true);
 
-            copy.copiaFiles(@"\\nas2\Fastmail\",0,txt_target.Text,txt_fmcode.Text);
-            copy.copiaFiles(@"\\nas2\Fastmail\",1,txt_target.Text,txt_fmcode.Text);
-            copy.copiaFiles(@"\\nas2\Fastmail\",2,txt_target.Text,txt_fmcode.Text);
-            copy.copiaFiles(@"\\nas2\Fastmail\",3,txt_target.Text,txt_fmcode.Text);
-            copy.copiaFiles(@"\\nas2\Fastmail\",4,txt_target.Text, txt_fmcode.Text);
+                string Bsource = @"\\nas2\Fastmail\buste\" + year + @"\" + txt_fmcode.Text;
+                string Bdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Buste" + @"\" + year;
+                copy.getFMFiles(Bsource, Bdest, true);*/
 
+                year++;
+            }
+            MessageBox.Show("Operazione terminata");
 
         }
     }
