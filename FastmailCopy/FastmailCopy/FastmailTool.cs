@@ -28,6 +28,11 @@ namespace FastmailCopy
                     foreach( DirectoryInfo dSourceSubDir in dirSource.GetDirectories() )
                     {
                         DirectoryInfo subDirTarget = dirTarget.CreateSubdirectory(dSourceSubDir.Name);
+
+                        foreach (FileInfo file in dSourceSubDir.GetFiles())
+                        {
+                            file.CopyTo(Path.Combine(subDirTarget.FullName, file.Name));
+                        }
                         getFMFiles(dSourceSubDir.Name, subDirTarget.Name,true);
                     }
                 }
