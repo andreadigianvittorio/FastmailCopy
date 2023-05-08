@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 
 
+
 namespace FastmailCopy
 {
     public partial class FC_Main : Form
@@ -33,28 +34,96 @@ namespace FastmailCopy
             FastmailTool copy = new FastmailTool( );
             int year = 2000;
             /* Devo generare la source e la dest */
-            while ( year <= DateTime.Now.Year )
+            while (year <= DateTime.Now.Year)
             {
-                
-                string Vsource = @"\\nas2\Fastmail\verbali\" + year + @"\" + txt_fmcode.Text;
-                string Vdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Verbali" + @"\" + year;
-                copy.getFMFiles(Vsource, Vdest, true);
-                
-                string Rsource = @"\\nas2\Fastmail\images\" + year + @"\" + txt_fmcode.Text;
-                string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Rendicontazioni" + @"\" + year;
-                copy.getFMFiles(Rsource, Rdest, true);
-                
-                string Csource = @"\\nas2\Fastmail\Cad\" + year + @"\" + txt_fmcode.Text;
-                string Cdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Cad" + @"\" + year;
-                copy.getFMFiles(Csource, Cdest, true);
-
-                string Bsource = @"\\nas2\Fastmail\buste\" + year + @"\" + txt_fmcode.Text;
-                string Bdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Buste" + @"\" + year;
-                copy.getFMFiles(Bsource, Bdest, true);
-
+                if (chkVerbali.Checked == true)
+                {
+                    string Vsource = @"\\nas2\Fastmail\verbali\" + year + @"\" + txt_fmcode.Text;
+                    string Vdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Verbali" + @"\" + year;
+                    copy.getFMFiles(Vsource, Vdest, true);
+                }
+                else
+                {
+                    MessageBox.Show("Copia verbali non selezionata");
+                    break;
+                }
                 year++;
             }
-            MessageBox.Show("Operazione terminata");
+            MessageBox.Show("Copia verbali terminata");
+            /*___________________________________________________________________________________________**/
+            year = 2000;
+            while (year <= DateTime.Now.Year)
+            {
+                if (chkImage.Checked == true)
+                {
+                    string Rsource = @"\\nas2\Fastmail\images\" + year + @"\" + txt_fmcode.Text;
+                    string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Rendicontazioni" + @"\" + year;
+                    copy.getFMFiles(Rsource, Rdest, true);
+                }
+                else
+                {
+                    MessageBox.Show("Copia rendicontazioni non selezionata");
+                    break;
+                }
+                year++;   
+            }
+            MessageBox.Show("Copia rendicontazioni terminata");
+            /*___________________________________________________________________________________________**/
+            year = 2000;
+            while (year <= DateTime.Now.Year)
+            {
+                if (chkCad.Checked == true)
+                {
+                    string Rsource = @"\\nas2\Fastmail\Cad\" + year + @"\" + txt_fmcode.Text;
+                    string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Cad" + @"\" + year;
+                    copy.getFMFiles(Rsource, Rdest, true);
+                }
+                else
+                {
+                    MessageBox.Show("Copia cad non selezionata");
+                    break;
+                }
+                year++;
+            }
+            MessageBox.Show("Copia cad terminata");
+            /*___________________________________________________________________________________________**/
+            year = 2000;
+            while (year <= DateTime.Now.Year)
+            {
+                if (chkBuste.Checked == true)
+                {
+                    string Rsource = @"\\nas2\Fastmail\Buste\" + year + @"\" + txt_fmcode.Text;
+                    string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Buste" + @"\" + year;
+                    copy.getFMFiles(Rsource, Rdest, true);
+                }
+                else
+                {
+                    MessageBox.Show("Copia buste non selezionata");
+                    break;
+                }
+                year++;
+            }
+            MessageBox.Show("Copia buste terminata");
+            /*___________________________________________________________________________________________**/
+            year = 2000;
+            while (year <= DateTime.Now.Year)
+            {
+                if (chkPec.Checked == true)
+                {
+                    string Rsource = @"\\nas2\Fastmail\Pec\" + year + @"\" + txt_fmcode.Text;
+                    string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Pec" + @"\" + year;
+                    copy.getFMFiles(Rsource, Rdest, true);
+                }
+                else
+                {
+                    MessageBox.Show("Copia pec non selezionata");
+                    break;
+                }
+                year++;
+            }
+            MessageBox.Show("Copia pec terminata");
+            /*___________________________________________________________________________________________**/
+            MessageBox.Show("Dump completato");
 
         }
     }
