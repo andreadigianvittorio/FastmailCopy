@@ -38,7 +38,7 @@ namespace FastmailCopy
             {
                 if (chkVerbali.Checked == true)
                 {
-                    string Vsource = @"\\nas2\Fastmail\verbali\" + year + @"\" + txt_fmcode.Text;
+                    string Vsource = @"\\nas3\Fastmail\verbali\" + year + @"\" + txt_fmcode.Text;
                     string Vdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Verbali" + @"\" + year;
                     copy.getFMFiles(Vsource, Vdest, true);
                 }
@@ -56,7 +56,7 @@ namespace FastmailCopy
             {
                 if (chkImage.Checked == true)
                 {
-                    string Rsource = @"\\nas2\Fastmail\images\" + year + @"\" + txt_fmcode.Text;
+                    string Rsource = @"\\nas3\Fastmail\images\" + year + @"\" + txt_fmcode.Text;
                     string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Rendicontazioni" + @"\" + year;
                     copy.getFMFiles(Rsource, Rdest, true);
                 }
@@ -74,7 +74,7 @@ namespace FastmailCopy
             {
                 if (chkCad.Checked == true)
                 {
-                    string Rsource = @"\\nas2\Fastmail\Cad\" + year + @"\" + txt_fmcode.Text;
+                    string Rsource = @"\\nas3\Fastmail\Cad\" + year + @"\" + txt_fmcode.Text;
                     string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Cad" + @"\" + year;
                     copy.getFMFiles(Rsource, Rdest, true);
                 }
@@ -92,7 +92,7 @@ namespace FastmailCopy
             {
                 if (chkBuste.Checked == true)
                 {
-                    string Rsource = @"\\nas2\Fastmail\Buste\" + year + @"\" + txt_fmcode.Text;
+                    string Rsource = @"\\nas3\Fastmail\Buste\" + year + @"\" + txt_fmcode.Text;
                     string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Buste" + @"\" + year;
                     copy.getFMFiles(Rsource, Rdest, true);
                 }
@@ -110,7 +110,7 @@ namespace FastmailCopy
             {
                 if (chkPec.Checked == true)
                 {
-                    string Rsource = @"\\nas2\Fastmail\Pec\" + year + @"\" + txt_fmcode.Text;
+                    string Rsource = @"\\nas3\Fastmail\Pec\" + year + @"\" + txt_fmcode.Text;
                     string Rdest = txt_target.Text + @"\" + txt_fmcode.Text + @"\" + "Pec" + @"\" + year;
                     copy.getFMFiles(Rsource, Rdest, true);
                 }
